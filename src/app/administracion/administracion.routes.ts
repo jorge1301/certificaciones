@@ -16,16 +16,16 @@ const routes: Routes = [{
     path: '',
     component: AdministracionComponent,
     children: [
-        { path: 'agencias', component: AgenciasComponent },
-        { path: 'avanzado', component: AvanzadoComponent },
-        { path: 'contactenos', component: ContactenosComponent },
-        { path: 'dashboard', component: DashboardComponent },
-        { path: 'galeria', component: GaleriaComponent },
-        { path: 'internacional', component: InternacionalComponent },
-        { path: 'portafolio', component: PortafolioComponent },
-        { path: 'certificados', component: CertificadosComponent },
+        { path: 'agencias', component: AgenciasComponent, data: { titulo: 'Agencias' } },
+        { path: 'avanzado', component: AvanzadoComponent, data: { titulo: 'Cursos Avanzados' } },
+        { path: 'contactenos', component: ContactenosComponent, data: { titulo: 'Contactenos' } },
+        { path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'} },
+        { path: 'galeria', component: GaleriaComponent, data: { titulo: 'Galeria' } },
+        { path: 'internacional', component: InternacionalComponent, data: { titulo: 'Cursos Internacionales' } },
+        { path: 'portafolio', component: PortafolioComponent, data: { titulo: 'Portafolio' } },
+        { path: 'certificados', component: CertificadosComponent, data: { titulo: 'Certificados' } },
         { path: 'certificado', component: CertificadoComponent },
-        { path: 'account-settings', component: AccountSettingsComponent}
+        { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema' }}
     ]
 }];
 
