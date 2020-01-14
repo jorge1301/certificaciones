@@ -10,11 +10,13 @@ import { PortafolioComponent } from './portafolio/portafolio.component';
 import { CertificadosComponent } from './certificados/certificados.component';
 import { CertificadoComponent } from './certificado/certificado.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { LoginGuardGuard } from '../services/service.index';
 
 
 const routes: Routes = [{
     path: '',
     component: AdministracionComponent,
+    canActivate: [LoginGuardGuard],
     children: [
         { path: 'agencias', component: AgenciasComponent, data: { titulo: 'Agencias' } },
         { path: 'avanzado', component: AvanzadoComponent, data: { titulo: 'Cursos Avanzados' } },
