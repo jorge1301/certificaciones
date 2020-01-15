@@ -11,6 +11,7 @@ import { CertificadosComponent } from './certificados/certificados.component';
 import { CertificadoComponent } from './certificado/certificado.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { LoginGuardGuard } from '../services/service.index';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [{
@@ -27,7 +28,8 @@ const routes: Routes = [{
         { path: 'portafolio', component: PortafolioComponent, data: { titulo: 'Portafolio' } },
         { path: 'certificados', component: CertificadosComponent, data: { titulo: 'Certificados' } },
         { path: 'certificado', component: CertificadoComponent },
-        { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema' }}
+        { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema' }},
+        { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } }
     ]
 }];
 

@@ -4,3 +4,8 @@
 .pointer {
     cursor: pointer;
 }
+
+.w150 {
+    width: 216px; 
+    height: 216px;
+}

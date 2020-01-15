@@ -12,6 +12,11 @@ import { ADMINISTRACION_ROUTES } from './administracion.routes';
 import { CertificadosComponent } from './certificados/certificados.component';
 import { CertificadoComponent } from './certificado/certificado.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+// Pipe Module
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -26,11 +31,15 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         InternacionalComponent,
         CertificadosComponent,
         CertificadoComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        ProfileComponent
     ],
     imports: [
         SharedModule,
-        ADMINISTRACION_ROUTES
+        ADMINISTRACION_ROUTES,
+        PipesModule,
+        FormsModule,
+        CommonModule
     ],
     exports: [
         DashboardComponent,
