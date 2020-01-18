@@ -20,9 +20,9 @@ export class AccountSettingsComponent implements OnInit {
   }
 
   colocarCheck() {
-    let tema = this.ajustes.ajustes.tema;
-    let selectores: any = document.getElementsByClassName('selector');
-    for (let ref of selectores) {
+    const tema = this.ajustes.ajustes.tema;
+    const selectores: any = document.getElementsByClassName('selector');
+    for (const ref of selectores) {
       if (ref.getAttribute('data-theme') === tema) {
         ref.classList.add('working');
         break;

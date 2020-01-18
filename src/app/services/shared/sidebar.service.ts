@@ -6,18 +6,16 @@ import { Injectable } from '@angular/core';
 export class SidebarService {
   menu: any = [
     {
-      titulo: 'Principal',
-      icono: 'mdi mdi-gauge',
+      titulo: 'Administración',
+      icono: 'mdi mdi-angular',
       submenu: [
-        { titulo: 'Dashboard', url: '/dashboard' },
         { titulo: 'Portafolio', url: '/portafolio' },
-        { titulo: 'Agencias', url: '/agencias' },
+        { titulo: 'Cursos del Portafolio', url: '/portafolio-cursos' },
         { titulo: 'Cursos Avanzados', url: '/avanzado' },
         { titulo: 'Cursos Internacionales', url: '/internacional' },
+        { titulo: 'Agencias', url: '/agencias' },
         { titulo: 'Galeria', url: '/galeria' },
-        { titulo: 'Contactenos', url: '/contactenos' },
-        { titulo: 'Certificados', url: '/certificados' },
-        { titulo: 'Certificado', url: '/certificado' }
+        { titulo: 'Certificados', url: '/certificados' }
       ]
     }
   ];

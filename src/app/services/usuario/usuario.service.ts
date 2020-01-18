@@ -26,7 +26,6 @@ export class UsuarioService {
     if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
       this.usuario = JSON.parse(localStorage.getItem('usuario'));
-      this.enviarUsuario.emit(this.usuario);
     } else {
       this.token = '';
       this.usuario = null;
@@ -83,6 +82,7 @@ export class UsuarioService {
       })
     );
   }
+
   informacionHeaderSidebar() {
     return this.enviarUsuario;
   }

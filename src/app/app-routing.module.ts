@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 import { LoginComponent } from './login/login.component';
 
 
@@ -10,7 +10,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash: true})],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
