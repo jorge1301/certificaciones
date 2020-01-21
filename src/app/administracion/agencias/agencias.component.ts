@@ -32,6 +32,7 @@ export class AgenciasComponent implements OnInit {
       });
 
   }
+
   cambiarDesde(valor: number) {
     const desde = this.desde + valor;
     if (desde >= this.totalRegistros) {

@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <input #input (keyup)="buscarPortafolio(input.value)" type="text" class="form-control" placeholder="Buscar agencias">
+                <input #input (keyup)="buscarPortafolio(input.value)" type="text" class="form-control" placeholder="Buscar portafolio">
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-right">
-                    <button type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
+                    <button [routerLink]="['/portafolio','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
                         Crear Portafolio
                     </button>
                 </div>
@@ -42,16 +42,16 @@
                             <td class="w70">
                                 <img [src]="portafolio.imagen | imagen: 'portafolios'" class="img-50 img-circle">
                             </td>
-                            <td>{{portafolio.titulo}}</td>
-                            <td>{{portafolio.mision}}</td>
-                            <td>{{portafolio.vision}}</td>
-                            <td>{{portafolio.centro}}</td>
+                            <td><div [innerHTML]="portafolio.titulo | domSeguro"></div></td>
+                            <td><div [innerHTML]="portafolio.mision | domSeguro"></div></td>
+                            <td><div [innerHTML]="portafolio.vision | domSeguro"></div></td>
+                            <td><div [innerHTML]="portafolio.centro | domSeguro"></div></td>
                             <td>
                                 <div class="d-flex justify-content-sm-end">
-                                    <button class="btn btn-primary mr-1">
+                                    <button [routerLink]="['/portafolio',portafolio._id]"  class="btn btn-primary mr-1">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button (click)="eliminarPortafolio()" class="btn btn-danger mr-1">
+                                    <button (click)="eliminarPortafolio(portafolio)" class="btn btn-danger mr-1">
                                         <i class="fa fa-trash-o"></i>
                                     </button>
                                 </div>

@@ -67,6 +67,7 @@ export class AgenciaFormularioComponent implements OnInit {
       }
     );
   }
+
   buscarInformacion(id) {
     this.agenciaService.buscarAgenciaId(id)
     .subscribe((agencia) => {

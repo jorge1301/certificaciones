@@ -26,6 +26,7 @@ import { InternacionalFormularioComponent } from './internacional/internacional-
 import { PortafolioFormularioComponent } from './portafolio/portafolio-formulario.component';
 import { PortafolioCursosFormularioComponent } from './portafolio-cursos/portafolio-cursos-formulario.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,8 @@ import { NgxEditorModule } from 'ngx-editor';
         FormsModule,
         CommonModule,
         ReactiveFormsModule,
-        NgxEditorModule
+        NgxEditorModule,
+        PdfViewerModule
     ],
     exports: [
         PortafolioComponent,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CertificadosService } from '../../services/service.index';
 import { Certificado } from '../../models/certificado.model';
 import Swal from 'sweetalert2';
+import { configuracion } from '../../config/editor';
 
 @Component({
   selector: 'app-certificados',
@@ -13,7 +14,7 @@ export class CertificadosComponent implements OnInit {
   desde = 0;
   totalRegistros = 0;
   cargando = true;
-
+  configuraciones = configuracion;
   constructor(public certificadoService: CertificadosService) { }
 
   ngOnInit() {
@@ -28,8 +29,8 @@ export class CertificadosComponent implements OnInit {
         this.certificado = resp.certificado;
         this.cargando = false;
       });
-
   }
+
   cambiarDesde(valor: number) {
     const desde = this.desde + valor;
     if (desde >= this.totalRegistros) {
@@ -70,6 +71,10 @@ export class CertificadosComponent implements OnInit {
         this.certificadoService.eliminarCertificados(certificado._id)
           .subscribe((resp: any) => {
             Swal.fire('Certificado eliminado', 'El certificado a sido eliminado correctamente', 'success');
+            this.totalRegistros--;
+            if (this.desde === this.totalRegistros) {
+              this.desde -= 5;
+            }
             this.cargarInformacion();
           });
       }

@@ -70,6 +70,10 @@ export class GaleriaComponent implements OnInit {
         this.galeriaService.eliminarGalerias(agencia._id)
           .subscribe((resp: any) => {
             Swal.fire('Galeria eliminada', 'La galeria a sido eliminada correctamente', 'success');
+            this.totalRegistros--;
+            if (this.desde === this.totalRegistros) {
+              this.desde -= 5;
+            }
             this.cargarInformacion();
           });
       }

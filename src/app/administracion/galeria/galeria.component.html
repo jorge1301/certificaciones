@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-right">
-                    <button type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
+                    <button [routerLink]="['/galeria','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
                         Crear Galeria
                     </button>
                 </div>
@@ -40,13 +40,15 @@
                             <td class="w70">
                                 <img [src]="galerias.imagen | imagen: 'galerias'" class="img-50 img-circle">
                             </td>
-                            <td>{{galerias.informacion}}</td>
+                            <td>
+                                <div [innerHTML]="galerias.informacion | domSeguro"></div>
+                            </td>
                             <td>
                                 <div class="d-flex justify-content-sm-end">
-                                    <button class="btn btn-primary mr-1">
+                                    <button [routerLink]="['/galeria',galerias._id]" class="btn btn-primary mr-1">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button class="btn btn-danger mr-1">
+                                    <button (click)="eliminarInformacion(galerias)" class="btn btn-danger mr-1">
                                         <i class="fa fa-trash-o"></i>
                                     </button>
                                 </div>

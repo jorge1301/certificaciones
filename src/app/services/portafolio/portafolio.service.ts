@@ -3,16 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { Portafolio } from 'src/app/models/portafolio.model';
 import { map } from 'rxjs/operators';
+import { UsuarioService } from '../usuario/usuario.service';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortafolioService {
-  token: string;
 
+  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+    this.usuarioService.cargarStorage();
 
-  constructor(public http: HttpClient) {
-    this.cargarStorage();
    }
 
   cargarPortafolios(desde: number = 0) {
@@ -20,27 +21,55 @@ export class PortafolioService {
     return this.http.get(url);
   }
 
-  cargarStorage() {
-    if (localStorage.getItem('token')) {
-      this.token = localStorage.getItem('token');
-    } else {
-      this.token = '';
-    }
-  }
-
   buscarPortafolios(termino: string) {
     let url = URL_SERVICIOS + '/busqueda/coleccion/portafolio/' + termino;
-    url += '?token=' + this.token;
+    url += '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe(
     map((resp: any) => resp.portafolio));
-
   }
 
   eliminarPortafolios(id: string) {
     let url = URL_SERVICIOS + '/portafolio/' + id;
-    url += '?token=' + this.token;
+    url += '?token=' + this.usuarioService.token;
     return this.http.delete(url);
 
+  }
+
+  crearPortafolios(archivo: FormData, portafolio: Portafolio) {
+    let url = URL_SERVICIOS + '/portafolio';
+    const data = {
+      titulo: portafolio.titulo,
+      mision: portafolio.mision,
+      vision: portafolio.vision,
+      centro: portafolio.centro,
+    };
+    archivo.append('data', JSON.stringify(data));
+
+    if (portafolio._id !== 'nuevo') {
+      url += '/' + portafolio._id + '?token=' + this.usuarioService.token;
+      return this.http.put(url, archivo).pipe(
+        map((resp: any) => {
+          Swal.fire('Portafolio actualizado', ' ', 'success');
+        })
+      );
+    } else {
+      url += '?token=' + this.usuarioService.token;
+      return this.http.post(url, archivo).pipe(
+        map((resp: any) => {
+          Swal.fire('Portafolio creado', ' ', 'success');
+          return resp.portafolioDB;
+        })
+      );
+    }
+  }
+
+  buscarPortafolioId(id: string) {
+    let url = URL_SERVICIOS + '/portafolio/' + id + '?token=' + this.usuarioService.token;
+    return this.http.get(url).pipe(
+      map((resp: any) => {
+        return resp.portafolio;
+      })
+    );
   }
 }
 

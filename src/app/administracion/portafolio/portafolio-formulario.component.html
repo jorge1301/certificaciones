@@ -1,1 +1,48 @@
-<p>portafolio-formulario works!</p>
+<div class="row">
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Crear Agencia</h4>
+                <form ngNativeValidate #formulario="ngForm" (ngSubmit)="crearPortafolio(formulario)" class="form p-t-20">
+                    <div class="form-group">
+                        <label for="exampleInputuname">Titulo</label>
+                        <app-ngx-editor ngNativeValidate [config]="configuraciones" name="titulo" [(ngModel)]="portafolio.titulo"
+                            [placeholder]="'Ingrese el titulo aqui....'" [spellcheck]="true" required></app-ngx-editor>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname">Misión</label>
+                        <app-ngx-editor ngNativeValidate [config]="configuraciones" name="mision"
+                            [(ngModel)]="portafolio.mision" [placeholder]="'Ingrese la misión aqui....'"
+                            [spellcheck]="true" required></app-ngx-editor>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname">Visión</label>
+                        <app-ngx-editor ngNativeValidate [config]="configuraciones" name="vision" [(ngModel)]="portafolio.vision"
+                            [placeholder]="'Ingrese la visión aqui....'" [spellcheck]="true" required></app-ngx-editor>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname">Centro</label>
+                        <app-ngx-editor ngNativeValidate [config]="configuraciones" name="centro" [(ngModel)]="portafolio.centro"
+                            [placeholder]="'Ingrese la información del centro aqui....'" [spellcheck]="true" required></app-ngx-editor>
+                    </div>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar</button>
+                    <a routerLink="/portafolio" class="btn btn-inverse waves-effect waves-light m-r-10">
+                        <i class="fa fa-times"></i>
+                        Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-5">
+        <div class="card">
+            <div class="card-body" align="center">
+                <h4 class="card-title">Fotografía del usuario</h4>
+                <img *ngIf="!imagenTemporal" [src]="portafolio.imagen| imagen:'portafolios'" class="w150">
+                <img *ngIf="imagenTemporal" [src]="imagenTemporal" class="w150">
+                <input (change)="seleccionarImagen($event.target.files[0])" type="file" />
+            </div>
+        </div>
+    </div>
+</div>
