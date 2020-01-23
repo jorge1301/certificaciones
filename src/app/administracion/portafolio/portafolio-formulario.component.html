@@ -25,6 +25,17 @@
                         <app-ngx-editor ngNativeValidate [config]="configuraciones" name="centro" [(ngModel)]="portafolio.centro"
                             [placeholder]="'Ingrese la información del centro aqui....'" [spellcheck]="true" required></app-ngx-editor>
                     </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname">Requisitos</label>
+                        <app-ngx-editor ngNativeValidate [config]="configuraciones" name="requisitos" [(ngModel)]="portafolio.requisitos"
+                            [placeholder]="'Ingrese los requisitos aqui....'" [spellcheck]="true" required></app-ngx-editor>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputuname">Incluye</label>
+                        <app-ngx-editor ngNativeValidate [config]="configuraciones" name="incluye" [(ngModel)]="portafolio.incluye"
+                            [placeholder]="'Ingrese lo que se incluye aqui....'" [spellcheck]="true" required></app-ngx-editor>
+                    </div>
+                    
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
                         <i class="fa fa-save"></i>
                         Guardar</button>
@@ -38,10 +49,10 @@
     <div class="col-lg-5 col-md-5">
         <div class="card">
             <div class="card-body" align="center">
-                <h4 class="card-title">Fotografía del usuario</h4>
+                <h4 class="card-title">Imagen del portafolio</h4>
                 <img *ngIf="!imagenTemporal" [src]="portafolio.imagen| imagen:'portafolios'" class="w150">
                 <img *ngIf="imagenTemporal" [src]="imagenTemporal" class="w150">
-                <input (change)="seleccionarImagen($event.target.files[0])" type="file" />
+                <input style="font-family: 'Times New Roman', Times, serif;" (change)="seleccionarImagen($event.target.files[0])" type="file"/>
             </div>
         </div>
     </div>

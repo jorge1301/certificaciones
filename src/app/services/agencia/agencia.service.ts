@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-import { map } from 'rxjs/operators';
-import { Agencia } from 'src/app/models/agencia.model';
+import { map, catchError } from 'rxjs/operators';
+import { Agencia } from '../../models/agencia.model';
 import { UsuarioService } from '../usuario/usuario.service';
 import Swal from 'sweetalert2';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,10 @@ export class AgenciaService {
       return this.http.put(url, archivo).pipe(
         map((resp: any) => {
           Swal.fire('Agencia actualizada', ' ', 'success');
+        }),
+        catchError(err => {
+          Swal.fire('Error al actualizar', err.error.mensaje, 'error');
+          return throwError(err);
         })
       );
     } else {
@@ -55,6 +60,10 @@ export class AgenciaService {
         map((resp: any) => {
           Swal.fire('Agencia creada', ' ', 'success');
           return resp.agenciaDB;
+        }),
+        catchError(err => {
+          Swal.fire('Error guardar', err.error.mensaje, 'error');
+          return throwError(err);
         })
       );
     }

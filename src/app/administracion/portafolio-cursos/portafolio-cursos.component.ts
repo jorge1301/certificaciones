@@ -25,7 +25,7 @@ export class PortafolioCursosComponent implements OnInit {
     this.portafolioCursoService.cargarPortafoliosCursos(this.desde)
       .subscribe((resp: any) => {
         this.totalRegistros = resp.total;
-        this.portafoliosCursos = resp.portafolio;
+        this.portafoliosCursos = resp.portafolioCursoDB;
         this.cargando = false;
       });
 
@@ -70,6 +70,10 @@ export class PortafolioCursosComponent implements OnInit {
         this.portafolioCursoService.eliminarPortafoliosCursos(portafolio._id)
           .subscribe((resp: any) => {
             Swal.fire('Curso eliminado', 'El curso del portafolio a sido eliminado correctamente', 'success');
+            this.totalRegistros--;
+            if (this.desde === this.totalRegistros) {
+              this.desde -= 5;
+            }
             this.cargarPortafoliosCursos();
           });
       }

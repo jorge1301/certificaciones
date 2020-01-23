@@ -55,7 +55,7 @@ export class InternacionalComponent implements OnInit {
       });
   }
 
-  eliminarCurso(avanzado) {
+  eliminarCurso(internacional) {
     Swal.fire({
       title: '¿Está seguro?',
       text: 'Usted va a eliminar el curso internacional',
@@ -67,9 +67,13 @@ export class InternacionalComponent implements OnInit {
       confirmButtonText: '¡Sí, eliminar!'
     }).then((result) => {
       if (result.value) {
-        this.internacionalService.eliminarCursoInternacional(avanzado._id)
+        this.internacionalService.eliminarCursoInternacional(internacional._id)
           .subscribe((resp: any) => {
             Swal.fire('Curso eliminado', 'El curso internacional a sido eliminado correctamente', 'success');
+            this.totalRegistros--;
+            if (this.desde === this.totalRegistros) {
+              this.desde -= 5;
+            }
             this.cargarCursos();
           });
       }

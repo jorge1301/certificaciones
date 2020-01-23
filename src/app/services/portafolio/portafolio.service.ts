@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { Portafolio } from 'src/app/models/portafolio.model';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { UsuarioService } from '../usuario/usuario.service';
 import Swal from 'sweetalert2';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,8 @@ export class PortafolioService {
       mision: portafolio.mision,
       vision: portafolio.vision,
       centro: portafolio.centro,
+      requisitos: portafolio.requisitos,
+      incluye: portafolio.incluye,
     };
     archivo.append('data', JSON.stringify(data));
 
@@ -50,6 +53,10 @@ export class PortafolioService {
       return this.http.put(url, archivo).pipe(
         map((resp: any) => {
           Swal.fire('Portafolio actualizado', ' ', 'success');
+        }),
+        catchError(err => {
+          Swal.fire('Error al actualizar', err.error.mensaje, 'error');
+          return throwError(err);
         })
       );
     } else {
@@ -58,6 +65,10 @@ export class PortafolioService {
         map((resp: any) => {
           Swal.fire('Portafolio creado', ' ', 'success');
           return resp.portafolioDB;
+        }),
+        catchError(err => {
+          Swal.fire('Error guardar', err.error.mensaje, 'error');
+          return throwError(err);
         })
       );
     }

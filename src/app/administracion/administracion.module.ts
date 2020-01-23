@@ -27,6 +27,9 @@ import { PortafolioFormularioComponent } from './portafolio/portafolio-formulari
 import { PortafolioCursosFormularioComponent } from './portafolio-cursos/portafolio-cursos-formulario.component';
 import { NgxEditorModule } from 'ngx-editor';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AgGridModule } from 'ag-grid-angular';
+import { ProgramacionComponent } from './programacion/programacion.component';
+import { EstiloCeldaAgridComponent } from './estilo-celda-agrid/estilo-celda-agrid.component';
 
 @NgModule({
     declarations: [
@@ -46,7 +49,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
         GaleriaFormularioComponent,
         InternacionalFormularioComponent,
         PortafolioFormularioComponent,
-        PortafolioCursosFormularioComponent
+        PortafolioCursosFormularioComponent,
+        ProgramacionComponent,
+        EstiloCeldaAgridComponent
     ],
     imports: [
         SharedModule,
@@ -56,7 +61,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
         CommonModule,
         ReactiveFormsModule,
         NgxEditorModule,
-        PdfViewerModule
+        PdfViewerModule,
+        AgGridModule.withComponents([EstiloCeldaAgridComponent])
     ],
     exports: [
         PortafolioComponent,
@@ -66,7 +72,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
         InternacionalComponent,
         CertificadosComponent,
         AccountSettingsComponent,
-        PortafolioCursosComponent
+        PortafolioCursosComponent,
+        ProgramacionComponent,
+        EstiloCeldaAgridComponent
     ]
 })
 

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { UsuarioService } from '../usuario/usuario.service';
 import { Galeria } from '../../models/galeria.model';
 import Swal from 'sweetalert2';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,10 @@ export class GaleriaService {
       return this.http.put(url, archivo).pipe(
         map((resp: any) => {
           Swal.fire('Galeria actualizada', ' ', 'success');
+        }),
+        catchError(err => {
+          Swal.fire('Error al actualizar', err.error.mensaje, 'error');
+          return throwError(err);
         })
       );
     } else {
@@ -54,6 +59,10 @@ export class GaleriaService {
         map((resp: any) => {
           Swal.fire('Galeria creada', ' ', 'success');
           return resp.galeriaDB;
+        }),
+        catchError(err => {
+          Swal.fire('Error guardar', err.error.mensaje, 'error');
+          return throwError(err);
         })
       );
     }

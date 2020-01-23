@@ -22,7 +22,8 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-right">
-                    <button type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
+                    <button [routerLink]="['/portafolio-cursos','nuevo']" type="button"
+                        class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
                         Crear Curso Portafolio
                     </button>
                 </div>
@@ -30,10 +31,10 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Imagen</th>
-                            <th>Requisitos</th>
-                            <th>Incluye</th>
-                            <th>Opciones</th>
+                            <th  class="text-center">Imagen</th>
+                            <th  class="text-center">Curso</th>
+                            <th  class="text-center">Información</th>
+                            <th  class="text-center">Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,14 +42,19 @@
                             <td class="w70">
                                 <img [src]="portafolio.imagen | imagen: 'portafolioCursos'" class="img-50 img-circle">
                             </td>
-                            <td>{{portafolio.requisitos}}</td>
-                            <td>{{portafolio.incluye}}</td>
                             <td>
-                                <div class="d-flex justify-content-sm-end">
-                                    <button class="btn btn-primary mr-1">
+                                <div [innerHTML]="portafolio.curso | domSeguro"></div>
+                            </td>
+                            <td>
+                                <div [innerHTML]="portafolio.informacion | domSeguro"></div>
+                            </td>
+                            <td>
+                                <div class="text-center">
+                                    <button [routerLink]="['/portafolio-cursos',portafolio._id]"
+                                        class="btn btn-primary mr-1">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button (click)="eliminarPortafolioCursos()" class="btn btn-danger mr-1">
+                                    <button (click)="eliminarPortafolioCursos(portafolio)" class="btn btn-danger mr-1">
                                         <i class="fa fa-trash-o"></i>
                                     </button>
                                 </div>

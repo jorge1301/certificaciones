@@ -2,9 +2,10 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,10 @@ export class UsuarioService {
       map((resp: any) => {
         this.guardarStorage(resp.id, resp.token, resp.usuarioDB);
         return true;
+      }),
+       catchError(err => {
+        Swal.fire('Error en el login', err.error.mensaje, 'error');
+        return throwError(err);
       })
     );
   }

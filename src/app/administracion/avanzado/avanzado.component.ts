@@ -71,6 +71,10 @@ export class AvanzadoComponent implements OnInit {
         this.avanzadoService.eliminarCursoAvanzado(avanzado._id)
           .subscribe((resp: any) => {
             Swal.fire('Curso eliminado', 'El curso avanzado a sido eliminado correctamente', 'success');
+            this.totalRegistros--;
+            if (this.desde === this.totalRegistros) {
+              this.desde -= 5;
+            }
             this.cargarCursos();
           });
       }

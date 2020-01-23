@@ -33,7 +33,6 @@
                             <th>Titulo</th>
                             <th>Mision</th>
                             <th>Vision</th>
-                            <th>Centro</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -45,7 +44,6 @@
                             <td><div [innerHTML]="portafolio.titulo | domSeguro"></div></td>
                             <td><div [innerHTML]="portafolio.mision | domSeguro"></div></td>
                             <td><div [innerHTML]="portafolio.vision | domSeguro"></div></td>
-                            <td><div [innerHTML]="portafolio.centro | domSeguro"></div></td>
                             <td>
                                 <div class="d-flex justify-content-sm-end">
                                     <button [routerLink]="['/portafolio',portafolio._id]"  class="btn btn-primary mr-1">

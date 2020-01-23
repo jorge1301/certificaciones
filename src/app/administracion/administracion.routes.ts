@@ -17,6 +17,7 @@ import { InternacionalFormularioComponent } from './internacional/internacional-
 import { PortafolioFormularioComponent } from './portafolio/portafolio-formulario.component';
 import { CertificadoFormularioComponent } from './certificados/certificado-formulario.component';
 import { PortafolioCursosFormularioComponent } from './portafolio-cursos/portafolio-cursos-formulario.component';
+import { ProgramacionComponent } from './programacion/programacion.component';
 
 
 const routes: Routes = [{
@@ -39,7 +40,8 @@ const routes: Routes = [{
         { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema' }},
         { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
         { path: 'portafolio-cursos', component: PortafolioCursosComponent, data: { titulo: 'Cursos del Portafolio' } },
-        { path: 'portafolio-cursos/:id', component: PortafolioCursosFormularioComponent, data: { titulo: 'Cursos del Portafolio' } }
+        { path: 'portafolio-cursos/:id', component: PortafolioCursosFormularioComponent, data: { titulo: 'Cursos del Portafolio' } },
+        { path: 'programacion', component: ProgramacionComponent, data: { titulo: 'Programacion de cursos' } }
     ]
 }];
 

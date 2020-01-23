@@ -5,6 +5,8 @@ export class Portafolio {
         public mision?: string,
         public vision?: string,
         public centro?: string,
+        public requisitos?: string,
+        public incluye?: string,
         public _id?: string
     ) { }
 }
