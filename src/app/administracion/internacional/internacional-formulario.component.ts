@@ -64,7 +64,7 @@ export class InternacionalFormularioComponent implements OnInit {
     }
     this.internacionalService.crearCursosInternacionales(formData, this.internacional)
       .subscribe(() => {
-        this.router.navigate(['/internacional']);
+        this.router.navigate(['administracion/internacional']);
       }
       );
   }

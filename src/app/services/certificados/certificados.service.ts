@@ -6,6 +6,7 @@ import { UsuarioService } from '../usuario/usuario.service';
 import { Certificado } from '../../models/certificado.model';
 import Swal from 'sweetalert2';
 import { throwError } from 'rxjs';
+import { saveAs } from 'file-saver';
 
 @Injectable({
   providedIn: 'root'
@@ -78,5 +79,12 @@ export class CertificadosService {
         return resp.certificado;
       })
     );
+  }
+
+  descargarCertificado(cedula: string) {
+    let url = URL_SERVICIOS + '/certificado/documento/';
+    let params = new HttpParams();
+    params = params.append('cedula', cedula.toString());
+    return this.http.get(url, { params, responseType: 'blob' });
   }
 }

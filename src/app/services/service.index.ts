@@ -1,3 +1,4 @@
+export { VerificaTokenGuard } from './guards/verifica-token.guard';
 export { AgenciaService } from './agencia/agencia.service';
 export { CursoAvanzadoService } from './avanzado/curso-avanzado.service';
 export { CertificadosService } from './certificados/certificados.service';

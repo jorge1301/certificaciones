@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { PortafolioCurso } from '../../models/portafolioCurso.model';
 import { UsuarioService } from '../usuario/usuario.service';
@@ -17,8 +17,11 @@ export class PortafolioCursosService {
     this.usuarioService.cargarStorage();
   }
 
-  cargarPortafoliosCursos(desde: number = 0) {
-    let url = URL_SERVICIOS + '/portafolio-curso?desde=' + desde;
+  cargarPortafoliosCursos(desde: number = 0, limite: number = 5) {
+    let url = URL_SERVICIOS + '/portafolio-curso/';
+    let params = new HttpParams();
+    params = params.append('desde', desde.toString());
+    params = params.append('limite', limite.toString());
     return this.http.get(url);
   }
 

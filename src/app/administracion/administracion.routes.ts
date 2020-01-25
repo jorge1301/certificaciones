@@ -18,31 +18,32 @@ import { PortafolioFormularioComponent } from './portafolio/portafolio-formulari
 import { CertificadoFormularioComponent } from './certificados/certificado-formulario.component';
 import { PortafolioCursosFormularioComponent } from './portafolio-cursos/portafolio-cursos-formulario.component';
 import { ProgramacionComponent } from './programacion/programacion.component';
+import { NopagefoundComponent } from '../shared/nopagefound/nopagefound.component';
 
 
 const routes: Routes = [{
-    path: '',
-    component: AdministracionComponent,
-    canActivate: [LoginGuardGuard],
-    children: [
-        { path: 'agencias', component: AgenciasComponent, data: { titulo: 'Agencias' } },
-        { path: 'agencia/:id', component: AgenciaFormularioComponent, data: { titulo: 'Agencias' } },
-        { path: 'avanzado', component: AvanzadoComponent, data: { titulo: 'Cursos Avanzados' } },
-        { path: 'avanzado/:id', component: AvanzadoFormularioComponent, data: { titulo: 'Cursos Avanzados' } },
-        { path: 'galeria', component: GaleriaComponent, data: { titulo: 'Galeria' } },
-        { path: 'galeria/:id', component: GaleriaFormularioComponent, data: { titulo: 'Galeria' } },
-        { path: 'internacional', component: InternacionalComponent, data: { titulo: 'Cursos Internacionales' } },
-        { path: 'internacional/:id', component: InternacionalFormularioComponent, data: { titulo: 'Cursos Internacionales' } },
-        { path: 'portafolio', component: PortafolioComponent, data: { titulo: 'Portafolio' } },
-        { path: 'portafolio/:id', component: PortafolioFormularioComponent, data: { titulo: 'Portafolio' } },
-        { path: 'certificados', component: CertificadosComponent, data: { titulo: 'Certificados' } },
-        { path: 'certificado/:id', component: CertificadoFormularioComponent, data: { titulo: 'Certificados' } },
-        { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema' }},
-        { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
-        { path: 'portafolio-cursos', component: PortafolioCursosComponent, data: { titulo: 'Cursos del Portafolio' } },
-        { path: 'portafolio-cursos/:id', component: PortafolioCursosFormularioComponent, data: { titulo: 'Cursos del Portafolio' } },
-        { path: 'programacion', component: ProgramacionComponent, data: { titulo: 'Programacion de cursos' } }
-    ]
+  path: 'administracion',
+  component: AdministracionComponent,
+  canActivate: [LoginGuardGuard],
+  children: [
+    { path: 'agencias', component: AgenciasComponent, data: { titulo: 'Agencias' } },
+    { path: 'agencia/:id', component: AgenciaFormularioComponent, data: { titulo: 'Agencias' } },
+    { path: 'avanzado', component: AvanzadoComponent, data: { titulo: 'Cursos Avanzados' } },
+    { path: 'avanzado/:id', component: AvanzadoFormularioComponent, data: { titulo: 'Cursos Avanzados' } },
+    { path: 'galeria', component: GaleriaComponent, data: { titulo: 'Galeria' } },
+    { path: 'galeria/:id', component: GaleriaFormularioComponent, data: { titulo: 'Galeria' } },
+    { path: 'internacional', component: InternacionalComponent, data: { titulo: 'Cursos Internacionales' } },
+    { path: 'internacional/:id', component: InternacionalFormularioComponent, data: { titulo: 'Cursos Internacionales' } },
+    { path: 'portafolio', component: PortafolioComponent, data: { titulo: 'Portafolio' } },
+    { path: 'portafolio/:id', component: PortafolioFormularioComponent, data: { titulo: 'Portafolio' } },
+    { path: 'certificados', component: CertificadosComponent, data: { titulo: 'Certificados' } },
+    { path: 'certificado/:id', component: CertificadoFormularioComponent, data: { titulo: 'Certificados' } },
+    { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema' } },
+    { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
+    { path: 'portafolio-cursos', component: PortafolioCursosComponent, data: { titulo: 'Cursos del Portafolio' } },
+    { path: 'portafolio-cursos/:id', component: PortafolioCursosFormularioComponent, data: { titulo: 'Cursos del Portafolio' } },
+    { path: 'programacion', component: ProgramacionComponent, data: { titulo: 'Programacion de cursos' } }
+  ]
 }];
 
 export const ADMINISTRACION_ROUTES = RouterModule.forChild(routes);

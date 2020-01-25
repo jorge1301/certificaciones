@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-right">
-                    <button [routerLink]="['/portafolio','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
+                    <button [routerLink]="['/administracion/portafolio','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
                         Crear Portafolio
                     </button>
                 </div>
@@ -46,7 +46,7 @@
                             <td><div [innerHTML]="portafolio.vision | domSeguro"></div></td>
                             <td>
                                 <div class="d-flex justify-content-sm-end">
-                                    <button [routerLink]="['/portafolio',portafolio._id]"  class="btn btn-primary mr-1">
+                                    <button [routerLink]="['/administracion/portafolio',portafolio._id]"  class="btn btn-primary mr-1">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                     <button (click)="eliminarPortafolio(portafolio)" class="btn btn-danger mr-1">

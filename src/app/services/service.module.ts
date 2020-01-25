@@ -13,8 +13,9 @@ import {
    CursoInternacionalService,
    AgenciaService,
    GaleriaService,
-   CertificadosService
-  } from './service.index';
+   CertificadosService,
+   VerificaTokenGuard
+    } from './service.index';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {
     CursoInternacionalService,
     AgenciaService,
     GaleriaService,
-    CertificadosService
+    CertificadosService,
+    VerificaTokenGuard
   ]
 })
 export class ServiceModule { }

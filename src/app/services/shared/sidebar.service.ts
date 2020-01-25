@@ -9,14 +9,14 @@ export class SidebarService {
       titulo: 'Administración',
       icono: 'mdi mdi-angular',
       submenu: [
-        { titulo: 'Portafolio', url: '/portafolio' },
-        { titulo: 'Cursos del Portafolio', url: '/portafolio-cursos' },
-        { titulo: 'Cursos Avanzados', url: '/avanzado' },
-        { titulo: 'Cursos Internacionales', url: '/internacional' },
-        { titulo: 'Programación', url: '/programacion' },
-        { titulo: 'Agencias', url: '/agencias' },
-        { titulo: 'Galeria', url: '/galeria' },
-        { titulo: 'Certificados', url: '/certificados' }
+        { titulo: 'Portafolio', url: '/administracion/portafolio' },
+        { titulo: 'Cursos del Portafolio', url: '/administracion/portafolio-cursos' },
+        { titulo: 'Cursos Avanzados', url: '/administracion/avanzado' },
+        { titulo: 'Cursos Internacionales', url: '/administracion/internacional' },
+        { titulo: 'Programación', url: '/administracion/programacion' },
+        { titulo: 'Agencias', url: '/administracion/agencias' },
+        { titulo: 'Galeria', url: '/administracion/galeria' },
+        { titulo: 'Certificados', url: '/administracion/certificados' }
       ]
     }
   ];

@@ -62,7 +62,7 @@ export class GaleriaFormularioComponent implements OnInit {
     }
     this.galeriaService.crearGalerias(formData, this.galeria)
       .subscribe(() => {
-        this.router.navigate(['/galeria']);
+        this.router.navigate(['administracion/galeria']);
       }
       );
   }

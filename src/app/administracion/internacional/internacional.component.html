@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-right">
-                    <button [routerLink]="['/internacional','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
+                    <button [routerLink]="['/administracion/internacional','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
                         Crear Curso Internacional
                     </button>
                 </div>
@@ -53,7 +53,7 @@
                             </td>
                             <td>
                                 <div class="d-flex justify-content-sm-end">
-                                    <button [routerLink]="['/internacional', internacional._id]" class="btn btn-primary mr-1">
+                                    <button [routerLink]="['/administracion/internacional', internacional._id]" class="btn btn-primary mr-1">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                     <button (click)="eliminarCurso(internacional)" class="btn btn-danger mr-1">

@@ -62,7 +62,7 @@ export class PortafolioFormularioComponent implements OnInit {
     }
     this.portafolioService.crearPortafolios(formData, this.portafolio)
       .subscribe(() => {
-        this.router.navigate(['/portafolio']);
+        this.router.navigate(['administracion/portafolio']);
       }
       );
   }

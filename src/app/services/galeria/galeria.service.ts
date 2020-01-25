@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { map, catchError } from 'rxjs/operators';
 import { UsuarioService } from '../usuario/usuario.service';
@@ -16,8 +16,11 @@ export class GaleriaService {
     this.usuarioService.cargarStorage();
   }
 
-  cargarGalerias(desde: number = 0) {
-    let url = URL_SERVICIOS + '/galeria?desde=' + desde;
+  cargarGalerias(desde: number = 0, limite: number = 5) {
+    let url = URL_SERVICIOS + '/galeria/';
+    let params = new HttpParams();
+    params = params.append('desde', desde.toString());
+    params = params.append('limite', limite.toString());
     return this.http.get(url);
   }
 

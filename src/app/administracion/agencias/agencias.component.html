@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="text-right">
-                    <button [routerLink]="['/agencia','nuevo']" type="button"
+                    <button [routerLink]="['/administracion/agencia','nuevo']" type="button"
                         class="btn waves-effect waves-light btn-rounded btn-primary"> <i class="fa fa-plus"></i>
                         Crear Agencia
                     </button>
@@ -46,7 +46,7 @@
                             </td>
                             <td>
                                 <div class="d-flex justify-content-sm-end">
-                                    <button [routerLink]="['/agencia',agencias._id]" class="btn btn-primary mr-1">
+                                    <button [routerLink]="['/administracion/agencia',agencias._id]" class="btn btn-primary mr-1">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                     <button (click)="eliminarInformacion(agencias)" class="btn btn-danger mr-1">

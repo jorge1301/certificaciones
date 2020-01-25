@@ -30,6 +30,6 @@ export class LoginComponent implements OnInit {
     }
     const usuario = new Usuario(null, forma.value.email, forma.value.password);
     this.usuarioService.login(usuario, forma.value.recordar)
-      .subscribe(resp => this.router.navigate(['/portafolio']));
+      .subscribe(resp => this.router.navigate(['administracion/portafolio']));
   }
 }

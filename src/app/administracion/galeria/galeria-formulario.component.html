@@ -2,7 +2,7 @@
     <div class="col-lg-7">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Crear Agencia</h4>
+                <h4 class="card-title">{{id === 'nuevo' ? 'Crear' : 'Editar'}} galeria</h4>
                 <form ngNativeValidate #formulario="ngForm" (ngSubmit)="crearGaleria(formulario)" class="form p-t-20">
                     <div class="form-group">
                         <label for="exampleInputuname">Información</label>
@@ -13,7 +13,7 @@
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
                         <i class="fa fa-save"></i>
                         Guardar</button>
-                    <a routerLink="/galeria" class="btn btn-inverse waves-effect waves-light m-r-10">
+                    <a routerLink="/administracion/galeria" class="btn btn-inverse waves-effect waves-light m-r-10">
                         <i class="fa fa-times"></i>
                         Cancelar</a>
                 </form>

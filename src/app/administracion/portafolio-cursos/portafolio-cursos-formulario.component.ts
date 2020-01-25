@@ -62,7 +62,7 @@ crearPortafolioCurso(formulario: NgForm) {
     }
     this.portafolioCursoService.crearPortafoliosCursos(formData, this.portafolioCurso)
       .subscribe(() => {
-        this.router.navigate(['/portafolio-cursos']);
+        this.router.navigate(['administracion/portafolio-cursos']);
       }
       );
   }

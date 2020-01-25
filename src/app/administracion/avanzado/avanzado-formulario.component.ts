@@ -64,7 +64,7 @@ export class AvanzadoFormularioComponent implements OnInit {
     }
     this.avanzadoService.crearCursosAvanzados(formData, this.avanzado)
       .subscribe(() => {
-        this.router.navigate(['/avanzado']);
+        this.router.navigate(['administracion/avanzado']);
       }
       );
   }

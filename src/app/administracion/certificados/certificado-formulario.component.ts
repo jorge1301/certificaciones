@@ -68,7 +68,7 @@ export class CertificadoFormularioComponent implements OnInit {
     }
     this.certificadoService.crearCertificados(formData, this.certificado)
       .subscribe(() => {
-        this.router.navigate(['/certificados']);
+        this.router.navigate(['administracion/certificados']);
       }
     );
   }

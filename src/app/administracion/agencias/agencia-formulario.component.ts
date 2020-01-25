@@ -63,7 +63,7 @@ export class AgenciaFormularioComponent implements OnInit {
     }
     this.agenciaService.crearAgencias(formData, this.agencia)
       .subscribe(() => {
-        this.router.navigate(['/agencias']);
+        this.router.navigate(['administracion/agencias']);
       }
     );
   }

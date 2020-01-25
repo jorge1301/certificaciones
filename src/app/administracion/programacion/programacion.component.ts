@@ -31,7 +31,7 @@ export class ProgramacionComponent implements OnInit {
   dia: string;
   informacion: string;
   cursoElegido: string;
-
+  rowData: string;
   constructor(
     public internacionalService: CursoInternacionalService,
     public avanzadoService: CursoAvanzadoService,
@@ -94,7 +94,7 @@ export class ProgramacionComponent implements OnInit {
       const formData = new FormData();
       this.avanzadoService.crearCursosAvanzados(formData, this.avanzado)
       .subscribe(() => {
-        this.router.navigate(['/programacion']);
+        this.router.navigate(['administracion/programacion']);
       });
     }
     if (this.cursoElegido === 'Internacional') {
@@ -102,7 +102,7 @@ export class ProgramacionComponent implements OnInit {
       const formData = new FormData();
       this.internacionalService.crearCursosInternacionales(formData, this.internacional)
         .subscribe(() => {
-          this.router.navigate(['/programacion']);
+          this.router.navigate(['administracion/programacion']);
         });
     }
     this.limpiarDatos();
@@ -143,6 +143,10 @@ export class ProgramacionComponent implements OnInit {
   }
 
   nuevaFila(f: NgForm) {
+    if (f.invalid) {
+      Swal.fire('Error', 'Debe ingresar los datos requeridos', 'error');
+      return;
+    }
     const nuevoValor = [{
       dia: f.value.dia,
       informacion: f.value.informacion
@@ -157,13 +161,11 @@ export class ProgramacionComponent implements OnInit {
     if (tipo === 'Avanzado') {
       this.avanzadoService.eliminarProgramacionAvanzada(this.avanzado._id, filaSeleccionada[0]._id)
         .subscribe(() => {
-          console.log('eliminado');
           this.enviarModeloAvanzado(this.avanzado._id);
         });
     } else if (tipo === 'Internacional') {
       this.internacionalService.eliminarProgramacionInternacional(this.internacional._id, filaSeleccionada[0]._id)
         .subscribe(() => {
-          console.log('eliminado');
           this.enviarModeloInternacional(this.internacional._id);
         });
     }

@@ -21,4 +21,10 @@
     width: 70px;
 }
 
+.img-portafolio {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
 

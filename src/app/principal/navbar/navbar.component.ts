@@ -1,0 +1,29 @@
+import { Component, OnInit } from '@angular/core';
+import { CertificadosService } from '../../services/certificados/certificados.service';
+import { NgForm } from '@angular/forms';
+import { saveAs } from 'file-saver';
+
+@Component({
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styles: []
+})
+export class NavbarComponent implements OnInit {
+  cedula: string;
+
+  constructor(public certificadoService: CertificadosService) { }
+
+  ngOnInit() {
+  }
+
+  descargarCertificado(f: NgForm) {
+    if (f.invalid) {
+      return;
+    }
+    this.certificadoService.descargarCertificado(f.value.cedula).
+    subscribe( (resp: any) => {
+      saveAs(resp, `${this.cedula}.pdf`);
+    });
+  }
+
+}
