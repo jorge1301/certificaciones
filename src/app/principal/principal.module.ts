@@ -11,7 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { GalleryModule } from '@ngx-gallery/core';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 @NgModule({
     declarations: [
@@ -29,8 +29,8 @@ import { GalleryModule } from '@ngx-gallery/core';
         PipesModule,
         FormsModule,
         NgbModule,
-        GalleryModule.withConfig({})
-        ],
+        NgxGalleryModule
+    ],
     exports: [
     ]
 })

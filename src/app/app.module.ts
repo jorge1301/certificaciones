@@ -10,7 +10,6 @@ import { AdministracionModule } from './administracion/administracion.module';
 // Servicios
 import { ServiceModule } from './services/service.module';
 import {FormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -25,9 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ServiceModule,
     FormsModule,
-    PrincipalModule,
-    BrowserAnimationsModule
-    ],
+    PrincipalModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
