@@ -17,7 +17,7 @@ agenciaLista: Agencia[] = [];
   }
 
   cargarInformacion() {
-    this.agenciaService.cargarAgencias(0, 50)
+    this.agenciaService.cargarAgencias(0, 0)
     .subscribe((resp: any) => {
       this.agenciaLista = resp.agencia;
     });

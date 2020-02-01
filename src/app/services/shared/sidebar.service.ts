@@ -16,7 +16,9 @@ export class SidebarService {
         { titulo: 'Programación', url: '/administracion/programacion' },
         { titulo: 'Agencias', url: '/administracion/agencias' },
         { titulo: 'Galeria', url: '/administracion/galeria' },
-        { titulo: 'Certificados', url: '/administracion/certificados' }
+        { titulo: 'Certificados', url: '/administracion/certificados' },
+        { titulo: 'Alumnos', url: '/administracion/alumnos' },
+        { titulo: 'Simulador de preguntas', url: '/administracion/quiz' }
       ]
     }
   ];

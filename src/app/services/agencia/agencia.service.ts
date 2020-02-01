@@ -22,7 +22,7 @@ export class AgenciaService {
     let params = new HttpParams();
     params = params.append('desde', desde.toString());
     params = params.append('limite', limite.toString());
-    return this.http.get(url);
+    return this.http.get(url, {params});
   }
 
   buscarAgencias(termino: string) {

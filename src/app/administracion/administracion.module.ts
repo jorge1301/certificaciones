@@ -30,6 +30,10 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AgGridModule } from 'ag-grid-angular';
 import { ProgramacionComponent } from './programacion/programacion.component';
 import { EstiloCeldaAgridComponent } from './estilo-celda-agrid/estilo-celda-agrid.component';
+import { AlumnosComponent } from './alumnos/alumnos.component';
+import { AlumnosFormularioComponent } from './alumnos/alumnos-formulario.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizFormularioComponent } from './quiz/quiz-formulario.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +55,11 @@ import { EstiloCeldaAgridComponent } from './estilo-celda-agrid/estilo-celda-agr
         PortafolioFormularioComponent,
         PortafolioCursosFormularioComponent,
         ProgramacionComponent,
-        EstiloCeldaAgridComponent
+        EstiloCeldaAgridComponent,
+        AlumnosComponent,
+        AlumnosFormularioComponent,
+        QuizComponent,
+        QuizFormularioComponent
     ],
     imports: [
         SharedModule,

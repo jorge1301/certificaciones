@@ -25,6 +25,7 @@ export class VerificaTokenGuard implements CanActivate {
       const tokenExp = new Date(fechaExp * 1000);
       const ahora =  new Date();
       ahora.setTime( ahora.getTime() + (4 * 60 * 60 * 1000));
+      console.log(tokenExp, ahora);
       if ( tokenExp.getTime() > ahora.getTime()) {
         resolve(true);
       } else {

@@ -21,14 +21,14 @@ export class GaleriaService {
     let params = new HttpParams();
     params = params.append('desde', desde.toString());
     params = params.append('limite', limite.toString());
-    return this.http.get(url);
+    return this.http.get(url, {params});
   }
 
   buscarGalerias(termino: string) {
     let url = URL_SERVICIOS + '/busqueda/coleccion/galeria/' + termino;
     url += '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe(
-      map((resp: any) => resp.galerias));
+      map((resp: any) => resp.galeria));
 
   }
 

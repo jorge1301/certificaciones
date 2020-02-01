@@ -10,13 +10,17 @@ import { AdministracionModule } from './administracion/administracion.module';
 // Servicios
 import { ServiceModule } from './services/service.module';
 import {FormsModule} from '@angular/forms';
+import { LoginQuizComponent } from './login-quiz/login-quiz.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    LoginQuizComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

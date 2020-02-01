@@ -18,7 +18,11 @@ import { PortafolioFormularioComponent } from './portafolio/portafolio-formulari
 import { CertificadoFormularioComponent } from './certificados/certificado-formulario.component';
 import { PortafolioCursosFormularioComponent } from './portafolio-cursos/portafolio-cursos-formulario.component';
 import { ProgramacionComponent } from './programacion/programacion.component';
-import { NopagefoundComponent } from '../shared/nopagefound/nopagefound.component';
+import { AlumnosComponent } from './alumnos/alumnos.component';
+import { AlumnosFormularioComponent } from './alumnos/alumnos-formulario.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizFormularioComponent } from './quiz/quiz-formulario.component';
+import { VerificaTokenGuard } from '../services/guards/verifica-token.guard';
 
 
 const routes: Routes = [{
@@ -26,23 +30,132 @@ const routes: Routes = [{
   component: AdministracionComponent,
   canActivate: [LoginGuardGuard],
   children: [
-    { path: 'agencias', component: AgenciasComponent, data: { titulo: 'Agencias' } },
-    { path: 'agencia/:id', component: AgenciaFormularioComponent, data: { titulo: 'Agencias' } },
-    { path: 'avanzado', component: AvanzadoComponent, data: { titulo: 'Cursos Avanzados' } },
-    { path: 'avanzado/:id', component: AvanzadoFormularioComponent, data: { titulo: 'Cursos Avanzados' } },
-    { path: 'galeria', component: GaleriaComponent, data: { titulo: 'Galeria' } },
-    { path: 'galeria/:id', component: GaleriaFormularioComponent, data: { titulo: 'Galeria' } },
-    { path: 'internacional', component: InternacionalComponent, data: { titulo: 'Cursos Internacionales' } },
-    { path: 'internacional/:id', component: InternacionalFormularioComponent, data: { titulo: 'Cursos Internacionales' } },
-    { path: 'portafolio', component: PortafolioComponent, data: { titulo: 'Portafolio' } },
-    { path: 'portafolio/:id', component: PortafolioFormularioComponent, data: { titulo: 'Portafolio' } },
-    { path: 'certificados', component: CertificadosComponent, data: { titulo: 'Certificados' } },
-    { path: 'certificado/:id', component: CertificadoFormularioComponent, data: { titulo: 'Certificados' } },
-    { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema' } },
-    { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
-    { path: 'portafolio-cursos', component: PortafolioCursosComponent, data: { titulo: 'Cursos del Portafolio' } },
-    { path: 'portafolio-cursos/:id', component: PortafolioCursosFormularioComponent, data: { titulo: 'Cursos del Portafolio' } },
-    { path: 'programacion', component: ProgramacionComponent, data: { titulo: 'Programacion de cursos' } }
+    {
+      path: 'agencias',
+      component: AgenciasComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Agencias' }
+    },
+    {
+      path: 'agencia/:id',
+      component: AgenciaFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Agencias' }
+    },
+    {
+      path: 'avanzado',
+      component: AvanzadoComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Cursos Avanzados' }
+    },
+    {
+      path: 'avanzado/:id',
+      component: AvanzadoFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Cursos Avanzados' }
+    },
+    {
+      path: 'galeria',
+      component: GaleriaComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Galeria' }
+    },
+    {
+      path: 'galeria/:id',
+      component: GaleriaFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Galeria' }
+    },
+    {
+      path: 'internacional',
+      component: InternacionalComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Cursos Internacionales' }
+    },
+    {
+      path: 'internacional/:id',
+      component: InternacionalFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Cursos Internacionales' }
+    },
+    {
+      path: 'portafolio',
+      component: PortafolioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Portafolio' }
+    },
+    {
+      path: 'portafolio/:id',
+      component: PortafolioFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Portafolio' }
+    },
+    {
+      path: 'certificados',
+      component: CertificadosComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Certificados' }
+    },
+    {
+      path: 'certificado/:id',
+      component: CertificadoFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Certificados' }
+    },
+    {
+      path: 'account-settings',
+      component: AccountSettingsComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Ajustes del Tema' }
+    },
+    {
+      path: 'perfil',
+      component: ProfileComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Perfil de usuario' }
+    },
+    {
+      path: 'portafolio-cursos',
+      component: PortafolioCursosComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Cursos del Portafolio' }
+    },
+    {
+      path: 'portafolio-cursos/:id',
+      component: PortafolioCursosFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Cursos del Portafolio' }
+    },
+    {
+      path: 'programacion',
+      component: ProgramacionComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Programacion de cursos' }
+    },
+    {
+      path: 'alumnos',
+      component: AlumnosComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Alumnos' }
+    },
+    {
+      path: 'alumnos/:id',
+      component: AlumnosFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Alumnos' }
+    },
+    {
+      path: 'quiz',
+      component: QuizComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Simulador de preguntas' }
+    },
+    {
+      path: 'quiz/:id',
+      component: QuizFormularioComponent,
+      canActivate: [VerificaTokenGuard],
+      data: { titulo: 'Simulador de preguntas' }
+    }
   ]
 }];
 

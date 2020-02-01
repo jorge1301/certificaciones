@@ -27,6 +27,27 @@
   object-fit: cover;
 }
 
+.th-principal {
+    width: 30%;
+}
 
+.th-secundario {
+    width: 10%;
+}
 
+th {
+    text-align: center;
+}
 
+td { 
+    text-align: justify;
+}
+
+.container-centrar {
+    margin: auto;
+    padding: 10%;
+}
+
+.quiz-container {
+  padding: 5%;
+}

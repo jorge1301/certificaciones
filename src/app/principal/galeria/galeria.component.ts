@@ -27,7 +27,7 @@ export class GaleriaComponent implements OnInit {
   }
 
   cargarInformacion() {
-    this.galeriaService.cargarGalerias(0, 50)
+    this.galeriaService.cargarGalerias(0, 0)
     .subscribe((resp: any) => {
       this.galeriaLista = resp.galeria;
       this.extraerImagen();

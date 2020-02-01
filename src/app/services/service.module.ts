@@ -14,7 +14,9 @@ import {
    AgenciaService,
    GaleriaService,
    CertificadosService,
-   VerificaTokenGuard
+   VerificaTokenGuard,
+   AlumnosService,
+   QuizService
     } from './service.index';
 
 
@@ -37,7 +39,9 @@ import {
     AgenciaService,
     GaleriaService,
     CertificadosService,
-    VerificaTokenGuard
+    VerificaTokenGuard,
+    AlumnosService,
+    QuizService
   ]
 })
 export class ServiceModule { }

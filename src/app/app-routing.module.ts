@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 import { LoginComponent } from './login/login.component';
-import { AdministracionComponent } from './administracion/administracion.component';
-import { LoginGuardGuard } from './services/guards/login-guard.guard';
+import { AlumnoGuardGuard } from './services/guards/alumno-guard.guard';
+import { LoginQuizComponent } from './login-quiz/login-quiz.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: LoginQuizComponent },
+  { path: 'quiz', component: QuizComponent, canActivate: [AlumnoGuardGuard] }
 ];
 
 @NgModule({

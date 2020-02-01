@@ -1,5 +1,6 @@
-export class Participante {
+export class Alumno {
     constructor(
+        public cedula?: string,
         public nombre?: string,
         public email?: string,
         public aciertos?: string,

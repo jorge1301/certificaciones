@@ -1,3 +1,5 @@
+export { AlumnosService } from './alumnos/alumnos.service';
+export { QuizService } from './quiz/quiz.service';
 export { VerificaTokenGuard } from './guards/verifica-token.guard';
 export { AgenciaService } from './agencia/agencia.service';
 export { CursoAvanzadoService } from './avanzado/curso-avanzado.service';

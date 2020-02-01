@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CertificadosService } from '../../services/certificados/certificados.service';
 import { NgForm } from '@angular/forms';
 import { saveAs } from 'file-saver';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,8 @@ import { saveAs } from 'file-saver';
 export class NavbarComponent implements OnInit {
   cedula: string;
 
-  constructor(public certificadoService: CertificadosService) { }
+  constructor(public certificadoService: CertificadosService) {
+  }
 
   ngOnInit() {
   }
@@ -22,8 +24,9 @@ export class NavbarComponent implements OnInit {
     }
     this.certificadoService.descargarCertificado(f.value.cedula).
     subscribe( (resp: any) => {
-      saveAs(resp, `${this.cedula}.pdf`);
+      //saveAs(resp, `${this.cedula}.pdf`);
+      const url = URL.createObjectURL(resp);
+      window.open(url);
     });
   }
-
 }
