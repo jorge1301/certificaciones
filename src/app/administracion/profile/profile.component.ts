@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   imagenSubir: File;
   imagenTemporal: string | ArrayBuffer;
 
-  constructor(public usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService) {
     this.usuario = this.usuarioService.usuario;
   }
 

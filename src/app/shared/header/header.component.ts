@@ -9,7 +9,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class HeaderComponent implements OnInit {
   usuario: Usuario;
-  constructor(public usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService) {
     this.nuevaInformacion();
   }
 

@@ -12,13 +12,13 @@ import { throwError } from 'rxjs';
 })
 export class AgenciaService {
 
-  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
     this.usuarioService.cargarStorage();
 
   }
 
   cargarAgencias(desde: number = 0, limite: number = 5) {
-    let url = URL_SERVICIOS + '/agencia/';
+    const url = URL_SERVICIOS + '/agencia/';
     let params = new HttpParams();
     params = params.append('desde', desde.toString());
     params = params.append('limite', limite.toString());
@@ -73,7 +73,7 @@ export class AgenciaService {
   }
 
   buscarAgenciaId(id: string) {
-    let url = URL_SERVICIOS + '/agencia/' + id + '?token=' + this.usuarioService.token;
+    const url = URL_SERVICIOS + '/agencia/' + id + '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe (
       map((resp: any) => {
         return resp.agencia;

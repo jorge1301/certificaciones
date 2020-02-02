@@ -15,7 +15,7 @@ export class LoginQuizComponent implements OnInit {
   alumno = new Alumno();
   quiz = '';
   cedula = '';
-  constructor(public router: Router, public alumnoService: AlumnosService) { }
+  constructor(private router: Router, private alumnoService: AlumnosService) { }
   ngOnInit() {
     init_plugins();
   }

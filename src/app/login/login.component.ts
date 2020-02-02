@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   recordar = false;
   email: string;
 
-  constructor(public router: Router, public usuarioService: UsuarioService) { }
+  constructor(private router: Router, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     init_plugins();

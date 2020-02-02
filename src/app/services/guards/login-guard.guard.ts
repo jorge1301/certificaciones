@@ -6,7 +6,7 @@ import { UsuarioService } from '../usuario/usuario.service';
   providedIn: 'root'
 })
 export class LoginGuardGuard implements CanActivate {
-  constructor(public usuarioService: UsuarioService, public router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
   canActivate() {
     if (this.usuarioService.validarLogin()) {
       return true;

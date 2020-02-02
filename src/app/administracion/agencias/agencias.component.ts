@@ -15,7 +15,7 @@ export class AgenciasComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
   configuraciones = configuracion;
-  constructor(public agenciaService: AgenciaService) {
+  constructor(private agenciaService: AgenciaService) {
   }
 
   ngOnInit() {

@@ -9,7 +9,7 @@ import { CursoAvanzado } from '../../models/cursoAvanzado.model';
 })
 export class AvanzadoComponent implements OnInit {
   avanzadoLista: CursoAvanzado[] = [];
-  constructor(public avanzadoService: CursoAvanzadoService) { }
+  constructor(private avanzadoService: CursoAvanzadoService) { }
 
   ngOnInit() {
     this.cargarInformacion();

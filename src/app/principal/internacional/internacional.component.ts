@@ -9,7 +9,7 @@ import { CursoInternacional } from '../../models/cursoInternacional.model';
 })
 export class InternacionalComponent implements OnInit {
   internacionalLista: CursoInternacional[] = [];
-  constructor(public internacionalService: CursoInternacionalService) { }
+  constructor(private internacionalService: CursoInternacionalService) { }
 
   ngOnInit() {
     this.cargarInformacion();
@@ -18,7 +18,7 @@ export class InternacionalComponent implements OnInit {
   cargarInformacion() {
     this.internacionalService.cargarCursoInternacional(0, 50)
     .subscribe((resp: any) => {
-      this.internacionalLista = resp.internacional
+      this.internacionalLista = resp.internacional;
     });
   }
 

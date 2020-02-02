@@ -14,7 +14,7 @@ export class AlumnosComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
 
-  constructor(public alumnoService: AlumnosService) { }
+  constructor(private alumnoService: AlumnosService) { }
 
   ngOnInit() {
     this.cargarInformacion();

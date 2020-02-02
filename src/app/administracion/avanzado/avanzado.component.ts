@@ -15,7 +15,7 @@ export class AvanzadoComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
 
-  constructor( public avanzadoService: CursoAvanzadoService) { }
+  constructor( private avanzadoService: CursoAvanzadoService) { }
 
   ngOnInit() {
     this.cargarCursos();

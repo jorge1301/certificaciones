@@ -13,7 +13,7 @@ export class PortafolioComponent implements OnInit {
   portafoliosLista: Portafolio[] = [];
   portafolioCursoLista: PortafolioCurso[] = [];
 
-  constructor(public portafolioService: PortafolioService, public portafolioCursoService: PortafolioCursosService) {
+  constructor(private portafolioService: PortafolioService, private portafolioCursoService: PortafolioCursosService) {
    }
 
   ngOnInit() {

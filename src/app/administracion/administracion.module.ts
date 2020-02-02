@@ -2,22 +2,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+// Pipe Module
+import { PipesModule } from '../pipes/pipes.module';
+
 // Componentes de administracion
 import { PortafolioComponent } from './portafolio/portafolio.component';
 import { AgenciasComponent } from './agencias/agencias.component';
 import { AvanzadoComponent } from './avanzado/avanzado.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { InternacionalComponent } from './internacional/internacional.component';
-import { AdministracionComponent } from './administracion.component';
-import { SharedModule } from '../shared/shared.module';
 import { ADMINISTRACION_ROUTES } from './administracion.routes';
 import { CertificadosComponent } from './certificados/certificados.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PortafolioCursosComponent } from './portafolio-cursos/portafolio-cursos.component';
 import { ProfileComponent } from './profile/profile.component';
-
-// Pipe Module
-import { PipesModule } from '../pipes/pipes.module';
 import { AgenciaFormularioComponent } from './agencias/agencia-formulario.component';
 import { AvanzadoFormularioComponent } from './avanzado/avanzado-formulario.component';
 import { CertificadoFormularioComponent } from './certificados/certificado-formulario.component';
@@ -37,7 +35,6 @@ import { QuizFormularioComponent } from './quiz/quiz-formulario.component';
 
 @NgModule({
     declarations: [
-        AdministracionComponent,
         PortafolioComponent,
         AgenciasComponent,
         AvanzadoComponent,
@@ -62,7 +59,6 @@ import { QuizFormularioComponent } from './quiz/quiz-formulario.component';
         QuizFormularioComponent
     ],
     imports: [
-        SharedModule,
         ADMINISTRACION_ROUTES,
         PipesModule,
         FormsModule,

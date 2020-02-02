@@ -17,9 +17,9 @@ export class AlumnosFormularioComponent implements OnInit {
   estado = false;
 
   constructor(
-    public alumnoService: AlumnosService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private alumnoService: AlumnosService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params => {
       this.id = params.id;

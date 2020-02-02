@@ -12,12 +12,12 @@ import { throwError } from 'rxjs';
 })
 export class CursoAvanzadoService {
 
-  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
     this.usuarioService.cargarStorage();
    }
 
   cargarCursoAvanzado(desde: number = 0, limite: number = 5) {
-    let url = URL_SERVICIOS + '/avanzado/';
+    const url = URL_SERVICIOS + '/avanzado/';
     let params = new HttpParams();
     params = params.append('desde', desde.toString());
     params = params.append('limite', limite.toString());
@@ -38,7 +38,7 @@ export class CursoAvanzadoService {
   }
 
   eliminarProgramacionAvanzada(id: string , idProgramacion: string) {
-    let url = URL_SERVICIOS + '/avanzado/eliminar/programacion';
+    const url = URL_SERVICIOS + '/avanzado/eliminar/programacion';
     let params = new HttpParams();
     params = params.append('id', id.toString());
     params = params.append('idProgramacion', idProgramacion.toString());
@@ -89,7 +89,7 @@ export class CursoAvanzadoService {
   }
 
   buscarCursoAvanzadoId(id: string) {
-    let url = URL_SERVICIOS + '/avanzado/' + id + '?token=' + this.usuarioService.token;
+    const url = URL_SERVICIOS + '/avanzado/' + id + '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe(
       map((resp: any) => {
         return resp.avanzado;

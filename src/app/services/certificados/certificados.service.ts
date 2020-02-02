@@ -6,19 +6,18 @@ import { UsuarioService } from '../usuario/usuario.service';
 import { Certificado } from '../../models/certificado.model';
 import Swal from 'sweetalert2';
 import { throwError } from 'rxjs';
-import { saveAs } from 'file-saver';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CertificadosService {
 
-  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
    this.usuarioService.cargarStorage();
   }
 
   cargarCertificados(desde: number = 0) {
-    let url = URL_SERVICIOS + '/certificado/certificados/';
+    const url = URL_SERVICIOS + '/certificado/certificados/';
     let params = new HttpParams();
     params = params.append('desde', desde.toString());
     params = params.append('token', this.usuarioService.token);
@@ -73,7 +72,7 @@ export class CertificadosService {
   }
 
   buscarCertificadosId(id: string) {
-    let url = URL_SERVICIOS + '/certificado/' + id + '?token=' + this.usuarioService.token;
+    const url = URL_SERVICIOS + '/certificado/' + id + '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe(
       map((resp: any) => {
         return resp.certificado;
@@ -82,7 +81,7 @@ export class CertificadosService {
   }
 
   descargarCertificado(cedula: string) {
-    let url = URL_SERVICIOS + '/certificado/documento/';
+    const url = URL_SERVICIOS + '/certificado/documento/';
     let params = new HttpParams();
     params = params.append('cedula', cedula.toString());
     return this.http.get(url, { params, responseType: 'blob' });

@@ -9,5 +9,5 @@ import { SettingsService } from './services/service.index';
 export class AppComponent {
   title = 'proyectoCertificaciones';
 
-  constructor(public ajustes: SettingsService) {}
+  constructor(private ajustes: SettingsService) {}
 }

@@ -9,7 +9,7 @@ import { SettingsService } from '../../services/service.index';
 })
 export class AccountSettingsComponent implements OnInit {
 
-  constructor(public ajustes: SettingsService) { }
+  constructor(private ajustes: SettingsService) { }
 
   ngOnInit() {
     this.colocarCheck();

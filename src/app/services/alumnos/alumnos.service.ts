@@ -12,7 +12,7 @@ import { throwError } from 'rxjs';
 })
 export class AlumnosService {
 
-  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
     this.usuarioService.cargarStorage();
    }
 

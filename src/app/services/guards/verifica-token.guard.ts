@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { UsuarioService } from '../usuario/usuario.service';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { UsuarioService } from '../usuario/usuario.service';
 })
 export class VerificaTokenGuard implements CanActivate {
 
-  constructor( public usuarioService: UsuarioService, public router: Router) {}
+  constructor( private usuarioService: UsuarioService, private router: Router) {}
 
   canActivate(): Promise<boolean> | boolean {
     const token = this.usuarioService.token;
@@ -25,7 +25,6 @@ export class VerificaTokenGuard implements CanActivate {
       const tokenExp = new Date(fechaExp * 1000);
       const ahora =  new Date();
       ahora.setTime( ahora.getTime() + (4 * 60 * 60 * 1000));
-      console.log(tokenExp, ahora);
       if ( tokenExp.getTime() > ahora.getTime()) {
         resolve(true);
       } else {

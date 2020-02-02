@@ -14,9 +14,9 @@ export class QuizFormularioComponent implements OnInit {
   id: string;
   literal = '';
   constructor(
-    public quizService: QuizService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private quizService: QuizService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params => {
       this.id = params.id;

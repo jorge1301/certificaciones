@@ -14,7 +14,7 @@ export class GaleriaComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
 
-  constructor(public galeriaService: GaleriaService) { }
+  constructor(private galeriaService: GaleriaService) { }
 
   ngOnInit() {
     this.cargarInformacion();

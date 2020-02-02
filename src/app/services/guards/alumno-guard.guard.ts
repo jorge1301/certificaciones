@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlumnoGuardGuard implements CanActivate {
-  constructor(public router: Router) {}
+  constructor(private router: Router) {}
   canActivate(): boolean {
     if (localStorage.getItem('alumno') !== null) {
       return true;

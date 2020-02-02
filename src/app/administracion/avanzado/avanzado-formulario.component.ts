@@ -19,9 +19,9 @@ export class AvanzadoFormularioComponent implements OnInit {
   id: string;
 
   constructor(
-    public avanzadoService: CursoAvanzadoService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private avanzadoService: CursoAvanzadoService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params => {
       this.id = params.id;

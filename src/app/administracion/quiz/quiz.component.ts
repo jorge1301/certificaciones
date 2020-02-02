@@ -14,7 +14,7 @@ export class QuizComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
 
-  constructor(public quizService: QuizService) { }
+  constructor(private quizService: QuizService) { }
 
   ngOnInit() {
     this.cargarInformacion();

@@ -19,9 +19,9 @@ export class InternacionalFormularioComponent implements OnInit {
   id: string;
 
   constructor(
-    public internacionalService: CursoInternacionalService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private internacionalService: CursoInternacionalService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params => {
       this.id = params.id;

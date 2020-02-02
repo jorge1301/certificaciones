@@ -33,9 +33,9 @@ export class ProgramacionComponent implements OnInit {
   cursoElegido: string;
   rowData: string;
   constructor(
-    public internacionalService: CursoInternacionalService,
-    public avanzadoService: CursoAvanzadoService,
-    public router: Router
+    private internacionalService: CursoInternacionalService,
+    private avanzadoService: CursoAvanzadoService,
+    private router: Router
     ) {
     this.columnDefs = [
       { headerName: 'Día', field: 'dia', rowDrag: true, cellRenderer: 'configuracionEstilo' },

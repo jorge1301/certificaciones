@@ -12,12 +12,12 @@ import { throwError } from 'rxjs';
 })
 export class CursoInternacionalService {
 
-  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
     this.usuarioService.cargarStorage();
    }
 
   cargarCursoInternacional(desde: number = 0, limite: number = 5) {
-    let url = URL_SERVICIOS + '/internacional/';
+    const url = URL_SERVICIOS + '/internacional/';
     let params = new HttpParams();
     params = params.append('desde', desde.toString());
     params = params.append('limite', limite.toString());
@@ -40,7 +40,7 @@ export class CursoInternacionalService {
   }
 
   eliminarProgramacionInternacional(id: string, idProgramacion: string) {
-    let url = URL_SERVICIOS + '/internacional/eliminar/programacion';
+    const url = URL_SERVICIOS + '/internacional/eliminar/programacion';
     let params = new HttpParams();
     params = params.append('id', id.toString());
     params = params.append('idProgramacion', idProgramacion.toString());
@@ -91,7 +91,7 @@ export class CursoInternacionalService {
   }
 
   buscarCursoInternacionalId(id: string) {
-    let url = URL_SERVICIOS + '/internacional/' + id + '?token=' + this.usuarioService.token;
+    const url = URL_SERVICIOS + '/internacional/' + id + '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe(
       map((resp: any) => {
         return resp.internacional;

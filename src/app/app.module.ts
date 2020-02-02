@@ -3,16 +3,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
-// Modulo Personalizado
-import { PrincipalModule } from './principal/principal.module';
-import { AdministracionModule } from './administracion/administracion.module';
-// Servicios
-import { ServiceModule } from './services/service.module';
 import {FormsModule} from '@angular/forms';
 import { LoginQuizComponent } from './login-quiz/login-quiz.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { AdministracionComponent } from './administracion/administracion.component';
+import { SharedModule } from './shared/shared.module';
+import { PrincipalComponent } from './principal/principal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxGalleryModule } from 'ngx-gallery';
 
+// Servicios
+import { ServiceModule } from './services/service.module';
 
 
 @NgModule({
@@ -20,15 +21,18 @@ import { QuizComponent } from './quiz/quiz.component';
     AppComponent,
     LoginComponent,
     LoginQuizComponent,
-    QuizComponent
+    QuizComponent,
+    AdministracionComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
-    AdministracionModule,
     AppRoutingModule,
     ServiceModule,
     FormsModule,
-    PrincipalModule
+    SharedModule,
+    NgbModule,
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

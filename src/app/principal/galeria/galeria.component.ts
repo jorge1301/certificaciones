@@ -18,7 +18,7 @@ export class GaleriaComponent implements OnInit {
   galeriaImagenes: NgxGalleryImage[];
   galeriaImagenesListado = [];
 
-  constructor(public galeriaService: GaleriaService, private pipeImagen: ImagenPipe, private pipeDomSeguro: DomSeguroPipe) {
+  constructor(private galeriaService: GaleriaService, private pipeImagen: ImagenPipe, private pipeDomSeguro: DomSeguroPipe) {
     this.opcionesGaleria = galleryOptions;
    }
 

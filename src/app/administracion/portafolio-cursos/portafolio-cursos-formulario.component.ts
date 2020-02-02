@@ -19,9 +19,9 @@ export class PortafolioCursosFormularioComponent implements OnInit {
   id: string;
 
 constructor(
-    public portafolioCursoService: PortafolioCursosService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private portafolioCursoService: PortafolioCursosService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params => {
       this.id = params.id;

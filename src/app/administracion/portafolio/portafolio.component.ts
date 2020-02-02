@@ -15,7 +15,7 @@ export class PortafolioComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
 
-  constructor(public portafolioService: PortafolioService) { }
+  constructor(private portafolioService: PortafolioService) { }
 
   ngOnInit() {
     this.cargarPortafolio();

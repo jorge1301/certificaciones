@@ -19,7 +19,7 @@ export class SettingsService {
   }
 
   cargarAjustes() {
-    if (localStorage.getItem('ajustes')){
+    if (localStorage.getItem('ajustes')) {
       this.ajustes = JSON.parse(localStorage.getItem('ajustes'));
       this.aplicarTema(this.ajustes.tema);
     } else {
@@ -28,7 +28,7 @@ export class SettingsService {
   }
 
   aplicarTema(tema: string) {
-    let url = `assets/css/colors/${tema}.css`;
+    const url = `assets/css/colors/${tema}.css`;
     this.document.getElementById('tema').setAttribute('href', url);
     this.ajustes.tema = tema;
     this.ajustes.temaUrl = url;

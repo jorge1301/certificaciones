@@ -20,9 +20,9 @@ export class AgenciaFormularioComponent implements OnInit {
   id: string;
 
   constructor(
-    public agenciaService: AgenciaService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private agenciaService: AgenciaService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
     ) {
       activatedRoute.params.subscribe(params => {
         this.id = params.id;

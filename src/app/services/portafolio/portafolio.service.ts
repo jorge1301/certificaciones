@@ -12,13 +12,13 @@ import { throwError } from 'rxjs';
 })
 export class PortafolioService {
 
-  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
     this.usuarioService.cargarStorage();
 
    }
 
   cargarPortafolios(desde: number = 0) {
-    let url = URL_SERVICIOS + '/portafolio?desde=' + desde;
+    const url = URL_SERVICIOS + '/portafolio?desde=' + desde;
     return this.http.get(url);
   }
 
@@ -75,7 +75,7 @@ export class PortafolioService {
   }
 
   buscarPortafolioId(id: string) {
-    let url = URL_SERVICIOS + '/portafolio/' + id + '?token=' + this.usuarioService.token;
+    const url = URL_SERVICIOS + '/portafolio/' + id + '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe(
       map((resp: any) => {
         return resp.portafolio;

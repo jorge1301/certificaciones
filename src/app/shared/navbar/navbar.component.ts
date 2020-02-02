@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 export class NavbarComponent implements OnInit {
   cedula: string;
 
-  constructor(public certificadoService: CertificadosService) {
+  constructor(private certificadoService: CertificadosService) {
   }
 
   ngOnInit() {

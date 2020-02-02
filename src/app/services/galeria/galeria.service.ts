@@ -12,12 +12,12 @@ import { throwError } from 'rxjs';
 })
 export class GaleriaService {
 
-  constructor(public http: HttpClient, public usuarioService: UsuarioService) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
     this.usuarioService.cargarStorage();
   }
 
   cargarGalerias(desde: number = 0, limite: number = 5) {
-    let url = URL_SERVICIOS + '/galeria/';
+    const url = URL_SERVICIOS + '/galeria/';
     let params = new HttpParams();
     params = params.append('desde', desde.toString());
     params = params.append('limite', limite.toString());
@@ -72,7 +72,7 @@ export class GaleriaService {
   }
 
   buscarGaleriasId(id: string) {
-    let url = URL_SERVICIOS + '/galeria/' + id + '?token=' + this.usuarioService.token;
+    const url = URL_SERVICIOS + '/galeria/' + id + '?token=' + this.usuarioService.token;
     return this.http.get(url).pipe(
       map((resp: any) => {
         return resp.galeria;

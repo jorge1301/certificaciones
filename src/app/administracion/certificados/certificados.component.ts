@@ -15,7 +15,7 @@ export class CertificadosComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
   configuraciones = configuracion;
-  constructor(public certificadoService: CertificadosService) { }
+  constructor(private certificadoService: CertificadosService) { }
 
   ngOnInit() {
     this.cargarInformacion();

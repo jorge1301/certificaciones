@@ -14,7 +14,7 @@ export class InternacionalComponent implements OnInit {
   totalRegistros = 0;
   cargando = true;
 
-  constructor(public internacionalService: CursoInternacionalService) { }
+  constructor(private internacionalService: CursoInternacionalService) { }
 
   ngOnInit() {
     this.cargarCursos();

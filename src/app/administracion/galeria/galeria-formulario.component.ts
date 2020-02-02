@@ -19,9 +19,9 @@ export class GaleriaFormularioComponent implements OnInit {
   id: string;
 
   constructor(
-    public galeriaService: GaleriaService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private galeriaService: GaleriaService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params => {
       this.id = params.id;

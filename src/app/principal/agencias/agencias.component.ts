@@ -10,7 +10,7 @@ import { Agencia } from '../../models/agencia.model';
 export class AgenciasComponent implements OnInit {
 agenciaLista: Agencia[] = [];
 
-  constructor(public agenciaService: AgenciaService) { }
+  constructor(private agenciaService: AgenciaService) { }
 
   ngOnInit() {
     this.cargarInformacion();

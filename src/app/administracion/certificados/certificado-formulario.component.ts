@@ -19,9 +19,9 @@ export class CertificadoFormularioComponent implements OnInit {
   pages = 1;
   condicion = false;
   constructor(
-    public certificadoService: CertificadosService,
-    public router: Router,
-    public activatedRoute: ActivatedRoute
+    private certificadoService: CertificadosService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params => {
       this.id = params.id;
